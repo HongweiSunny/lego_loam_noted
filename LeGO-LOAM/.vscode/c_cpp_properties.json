@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/shw/catkin_ws_legoloam/devel/include/**",
+                "/opt/ros/melodic/include/**",
+                "/home/shw/catkin_ws_legoloam/src/LeGO-LOAM/LeGO-LOAM/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}
