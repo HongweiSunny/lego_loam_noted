@@ -8,6 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/shw/catkin_ws_legoloam/src/LeGO-LOAM/LeGO-LOAM/build/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/shw/catkin_ws_legoloam/src/LeGO-LOAM/LeGO-LOAM/build/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/shw/catkin_ws_legoloam/src/LeGO-LOAM/LeGO-LOAM/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/shw/catkin_ws_legoloam/src/LeGO-LOAM/LeGO-LOAM/build'
-export ROSLISP_PACKAGE_DIRECTORIES="/home/shw/catkin_ws_legoloam/src/LeGO-LOAM/LeGO-LOAM/build/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROSLISP_PACKAGE_DIRECTORIES='/home/shw/catkin_ws_legoloam/src/LeGO-LOAM/LeGO-LOAM/build/devel/share/common-lisp'
 export ROS_PACKAGE_PATH="/home/shw/catkin_ws_legoloam/src/LeGO-LOAM/LeGO-LOAM:$ROS_PACKAGE_PATH"
