@@ -1844,6 +1844,8 @@ public:
     void publishOdometry()
     {
         geometry_msgs::Quaternion geoQuat = tf::createQuaternionMsgFromRollPitchYaw(transformSum[2], -transformSum[0], -transformSum[1]);
+        
+       // std::cout << "geoQuat_ori： " << -geoQuat.y << -geoQuat.z << geoQuat.x<< geoQuat.w << std::endl;
 
         laserOdometry.header.stamp = cloudHeader.stamp;
         laserOdometry.pose.pose.orientation.x = -geoQuat.y;
@@ -1854,6 +1856,13 @@ public:
         laserOdometry.pose.pose.position.y = transformSum[4];
         laserOdometry.pose.pose.position.z = transformSum[5];
         pubLaserOdometry.publish(laserOdometry);
+
+        //  tf::Quaternion geoTest (0, 0, 0, 0);
+        // geoTest.setEuler(transformSum[2], transformSum[1], transformSum[0]);
+        // cout << "geoQuat_end： " << geoTest .x ()<< geoTest.y ()<< geoTest.z()<< geoTest.w() << endl;
+
+      ///  geometry_msgs::Quaternion geoTest = tf::createQuaternionMsgFromRollPitchYaw(transformSum[2], transformSum[1], transformSum[0]);
+        /// std::cout << "geoTest_ori： " << geoTest.x << geoTest.y << geoTest.z<< geoTest.w << std::endl;
 
         laserOdometryTrans.stamp_ = cloudHeader.stamp;
         laserOdometryTrans.setRotation(tf::Quaternion(-geoQuat.y, -geoQuat.z, geoQuat.x, geoQuat.w));

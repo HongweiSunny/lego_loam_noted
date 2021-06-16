@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/shw/catkin_ws_legoloam/src/LeGO-LOAM/cloud_msgs/build/devel/setup.sh

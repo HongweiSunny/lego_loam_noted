@@ -221,6 +221,7 @@ public:
 
     void findStartEndAngle()
     {
+        // 雷达是逆时针旋转的 所以y轴是和右手坐标系的y轴是反的
         // start and end orientation of this cloud
         segMsg.startOrientation = -atan2(laserCloudIn->points[0].y, laserCloudIn->points[0].x);
         segMsg.endOrientation = -atan2(laserCloudIn->points[laserCloudIn->points.size() - 1].y,
@@ -546,19 +547,19 @@ public:
 
         pcl::toROSMsg(*outlierCloud, laserCloudTemp);
         laserCloudTemp.header.stamp = cloudHeader.stamp;
-        laserCloudTemp.header.frame_id = "base_link";
+        laserCloudTemp.header.frame_id = "rslidar";
         pubOutlierCloud.publish(laserCloudTemp);
         // segmented cloud with ground
         pcl::toROSMsg(*segmentedCloud, laserCloudTemp);
         laserCloudTemp.header.stamp = cloudHeader.stamp;
-        laserCloudTemp.header.frame_id = "base_link";
+        laserCloudTemp.header.frame_id = "rslidar";
         pubSegmentedCloud.publish(laserCloudTemp);
         // projected full cloud
         if (pubFullCloud.getNumSubscribers() != 0)
         {
             pcl::toROSMsg(*fullCloud, laserCloudTemp);
             laserCloudTemp.header.stamp = cloudHeader.stamp;
-            laserCloudTemp.header.frame_id = "base_link";
+            laserCloudTemp.header.frame_id = "rslidar";
             pubFullCloud.publish(laserCloudTemp);
         }
         // original dense ground cloud
@@ -567,7 +568,7 @@ public:
         {
             pcl::toROSMsg(*groundCloud, laserCloudTemp);
             laserCloudTemp.header.stamp = cloudHeader.stamp;
-            laserCloudTemp.header.frame_id = "base_link";
+            laserCloudTemp.header.frame_id = "rslidar";
             pubGroundCloud.publish(laserCloudTemp);
         }
         // segmented cloud without ground
@@ -576,7 +577,7 @@ public:
         {
             pcl::toROSMsg(*segmentedCloudPure, laserCloudTemp);
             laserCloudTemp.header.stamp = cloudHeader.stamp;
-            laserCloudTemp.header.frame_id = "base_link";
+            laserCloudTemp.header.frame_id = "rslidar";
             pubSegmentedCloudPure.publish(laserCloudTemp);
         }
         // projected full cloud info
@@ -584,7 +585,7 @@ public:
         {
             pcl::toROSMsg(*fullInfoCloud, laserCloudTemp);
             laserCloudTemp.header.stamp = cloudHeader.stamp;
-            laserCloudTemp.header.frame_id = "base_link";
+            laserCloudTemp.header.frame_id = "rslidar";
             pubFullInfoCloud.publish(laserCloudTemp);
         }
     }

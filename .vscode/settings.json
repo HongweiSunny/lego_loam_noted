@@ -2,5 +2,10 @@
     "python.autoComplete.extraPaths": [
         "/home/shw/catkin_ws_legoloam/devel/lib/python2.7/dist-packages",
         "/opt/ros/melodic/lib/python2.7/dist-packages"
-    ]
+    ],
+    "python.analysis.extraPaths": [
+        "/home/shw/catkin_ws_legoloam/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ],
+    "cmake.sourceDirectory": "${workspaceFolder}/LeGO-LOAM"
 }
